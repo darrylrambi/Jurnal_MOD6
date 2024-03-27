@@ -9,7 +9,7 @@ public class SayaTubeVideo
 
     public SayaTubeVideo(string judul)
     {
-        if (string.IsNullOrEmpty(judul) || judul.Length > 100)
+        if (string.IsNullOrEmpty(judul) || judul.Length > 200)
         {
             Console.WriteLine("Invalid Input");
         }

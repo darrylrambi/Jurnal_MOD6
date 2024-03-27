@@ -10,9 +10,15 @@ public class SayaTubeUser
 
     public SayaTubeUser(string input)
     {
-        id = random.Next(10000, 99999);
-        this.Username = input;
-        this.uploadedVideos = new List<SayaTubeVideo>();
+        if (string.IsNullOrEmpty(input) || input.Length > 100)
+        {
+            Console.WriteLine("Input not valid");
+        } else
+        {
+            id = random.Next(10000, 99999);
+            this.Username = input;
+            this.uploadedVideos = new List<SayaTubeVideo>();
+        }
     }
 
     public int GetTotalVideoPlayCount()
@@ -25,7 +31,10 @@ public class SayaTubeUser
         return total;
     }
 
-    public void AddVideo(SayaTubeVideo video) { uploadedVideos.Add(video);}
+    public void AddVideo(SayaTubeVideo video)
+    { 
+        uploadedVideos.Add(video);
+    }
 
     public void PrintAllVideoPlayCount()
     {
